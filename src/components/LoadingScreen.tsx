@@ -13,7 +13,6 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   const isCompleteRef = useRef(false);
   const audioContextRef = useRef<AudioContext | null>(null);
   const [displayedText, setDisplayedText] = useState('');
-  const [showPortal, setShowPortal] = useState(false);
   const fullText = 'ENTERING THE PPOP UNIVERSE';
 
   // Typewriter effect
@@ -29,15 +28,6 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     }, 60); // Adjust speed as needed
 
     return () => clearInterval(typewriterInterval);
-  }, []);
-
-  // Show portal circle after 1.5 seconds
-  useEffect(() => {
-    const portalTimer = setTimeout(() => {
-      setShowPortal(true);
-    }, 1500);
-
-    return () => clearTimeout(portalTimer);
   }, []);
 
   // Initialize Web Audio API for ambient space sound
@@ -143,24 +133,6 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
             |
           </motion.span>
         </motion.div>
-
-        {/* Expanding portal circle */}
-        {showPortal && (
-          <>
-            {/* Warp expansion waves */}
-            <motion.div className="portal-warp-1" />
-            <motion.div className="portal-warp-2" />
-            <motion.div className="portal-warp-3" />
-
-            {/* Main portal circle */}
-            <motion.div
-              className="portal-circle"
-              initial={{ scale: 0.1, opacity: 0.8 }}
-              animate={{ scale: 3 }}
-              transition={{ duration: 2.5, ease: 'easeInOut' }}
-            />
-          </>
-        )}
       </div>
     </AnimatePresence>
   );
