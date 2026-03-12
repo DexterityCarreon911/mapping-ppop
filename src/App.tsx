@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { LandingPage } from './components/LandingPage'
 import { LoadingScreen } from './components/LoadingScreen'
+import { JudgesMessage } from './components/JudgesMessage'
 import { MapPage } from './components/MapPage'
 import './App.css'
 
-type AppState = 'landing' | 'loading' | 'map'
+type AppState = 'landing' | 'loading' | 'judges' | 'map'
 
 function App() {
   const [state, setState] = useState<AppState>('landing')
@@ -14,6 +15,10 @@ function App() {
   }
 
   const handleLoadingComplete = () => {
+    setState('judges')
+  }
+
+  const handleJudgesMessageComplete = () => {
     setState('map')
   }
 
@@ -21,6 +26,8 @@ function App() {
     <>
       {state === 'landing' && <LandingPage onEnter={handleEnter} />}
       {state === 'loading' && <LoadingScreen onComplete={handleLoadingComplete} />}
+      {state === 'judges' && <JudgesMessage onComplete={handleJudgesMessageComplete} />}
+      {state === 'map' && <MapPage />}
       {state === 'map' && <MapPage />}
     </>
   )
