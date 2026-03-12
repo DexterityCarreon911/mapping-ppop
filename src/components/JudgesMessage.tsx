@@ -10,7 +10,7 @@ export const JudgesMessage = ({ onComplete }: JudgesMessageProps) => {
   const [displayedText, setDisplayedText] = useState('');
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const charIndexRef = useRef(0);
-  const fullText = 'Welcome, Honored Judges. From sea to shining sea, witness the digital innovation that powers the American Dream. Across mountains, deserts, and coastlines, these cities represent the spirit of progress, diversity, and possibility that defines our nation. Let the journey begin...';
+  const fullText = 'Welcome, Honored Judges. From sea to shining sea, witness the digital innovation that powers the American Dream. Across mountains, deserts, and coastlines, these cities represent the spirit of progress, diversity, and possibility that defines this great nation. Let the journey begin...';
 
   useEffect(() => {
     // Initialize speech synthesis
