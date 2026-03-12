@@ -30,7 +30,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     return () => clearInterval(typewriterInterval);
   }, []);
 
-  // Initialize Web Audio API for ambient space sound
+  // Initialize Web Audio API for ambient space sound and warning sounds
   useEffect(() => {
     // Auto-transition after ~4 seconds
     const transitionTimer = setTimeout(() => {
@@ -75,6 +75,39 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         osc2.start(now);
         osc1.stop(now + duration);
         osc2.stop(now + duration);
+
+        // Create warning beeps
+        const createWarningBeep = (startTime: number, frequency: number) => {
+          const warningOsc = audioContext.createOscillator();
+          const warningGain = audioContext.createGain();
+          const warningFilter = audioContext.createBiquadFilter();
+
+          warningOsc.type = 'square';
+          warningOsc.frequency.setValueAtTime(frequency, startTime);
+
+          warningFilter.type = 'highpass';
+          warningFilter.frequency.value = 800;
+
+          warningGain.gain.setValueAtTime(0, startTime);
+          warningGain.gain.linearRampToValueAtTime(0.15, startTime + 0.01);
+          warningGain.gain.linearRampToValueAtTime(0.15, startTime + 0.1);
+          warningGain.gain.linearRampToValueAtTime(0, startTime + 0.15);
+
+          warningOsc.connect(warningFilter);
+          warningFilter.connect(warningGain);
+          warningGain.connect(audioContext.destination);
+
+          warningOsc.start(startTime);
+          warningOsc.stop(startTime + 0.15);
+        };
+
+        // Schedule warning beeps at intervals
+        createWarningBeep(now + 1.0, 1000);
+        createWarningBeep(now + 1.5, 1200);
+        createWarningBeep(now + 2.2, 800);
+        createWarningBeep(now + 2.7, 1100);
+        createWarningBeep(now + 3.3, 900);
+
       } catch (e) {
         console.log('Web Audio API not supported or blocked:', e);
       }
