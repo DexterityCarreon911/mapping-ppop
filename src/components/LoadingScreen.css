@@ -1,0 +1,203 @@
+.loading-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00001A;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.typewriter-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  text-align: center;
+  pointer-events: none;
+}
+
+.typewriter-text {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00FFE5;
+  text-shadow: 0 0 20px #00FFE5, 0 0 40px #7B2FFF;
+  letter-spacing: 3px;
+  margin: 0;
+  white-space: nowrap;
+  line-height: 1.2;
+  max-width: 90vw;
+  text-transform: uppercase;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  color: #00FFE5;
+  text-shadow: 0 0 10px #00FFE5;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.portal-circle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #7B2FFF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+  box-shadow: 
+    0 0 30px #7B2FFF,
+    0 0 60px #00FFE5,
+    inset 0 0 30px rgba(123, 47, 255, 0.3),
+    inset 0 0 60px rgba(0, 255, 229, 0.2);
+  background: radial-gradient(circle, rgba(123, 47, 255, 0.2) 0%, rgba(0, 255, 229, 0.1) 50%, transparent 100%);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+/* Portal inner rings */
+.portal-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00FFE5;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  animation: portalPulse 3s ease-in-out infinite;
+  box-shadow: 0 0 20px #00FFE5, inset 0 0 20px rgba(0, 255, 229, 0.4);
+}
+
+.portal-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  animation: portalSpin 8s linear infinite;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes portalPulse {
+  0% {
+    box-shadow: 0 0 20px #00FFE5, inset 0 0 20px rgba(0, 255, 229, 0.4);
+    opacity: 0.6;
+  }
+  50% {
+    box-shadow: 0 0 40px #00FFE5, inset 0 0 40px rgba(0, 255, 229, 0.6);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 20px #00FFE5, inset 0 0 20px rgba(0, 255, 229, 0.4);
+    opacity: 0.6;
+  }
+}
+
+@keyframes portalSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Portal warp effect - create multiple expanding circles */
+.portal-warp-1,
+.portal-warp-2,
+.portal-warp-3 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+}
+
+.portal-warp-1 {
+  animation: warpExpand 4s ease-out forwards;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(123, 47, 255, 0.6);
+  box-shadow: 0 0 20px rgba(123, 47, 255, 0.8);
+}
+
+.portal-warp-2 {
+  animation: warpExpand 4s ease-out 0.3s forwards;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(0, 255, 229, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 229, 0.7);
+}
+
+.portal-warp-3 {
+  animation: warpExpand 4s ease-out 0.6s forwards;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes warpExpand {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    border-width: 2px;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+    opacity: 0;
+    border-width: 0px;
+  }
+}
+
+.loading-text-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  pointer-events: none;
+}
+
+.entering-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffe5;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 255, 229, 0.6), 0 0 40px rgba(123, 47, 255, 0.4);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .entering-text {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}

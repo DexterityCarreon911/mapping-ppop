@@ -1,0 +1,180 @@
+.map-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  font-family: 'Courier New', monospace;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  background: #0a0e27;
+}
+
+/* Override Leaflet default styles */
+.map-container .leaflet-control-container {
+  font-family: 'Courier New', monospace;
+}
+
+.map-container .leaflet-control {
+  border: none;
+  background: rgba(26, 26, 62, 0.9) !important;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.map-container .leaflet-control a {
+  color: #00ff88 !important;
+  border: 1px solid rgba(0, 255, 136, 0.3) !important;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.map-container .leaflet-control a:hover {
+  background: rgba(0, 255, 136, 0.1) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4) !important;
+}
+
+/* City Markers */
+.city-marker {
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.4));
+}
+
+.marker-inner {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #00ff88, #005f44);
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.marker-pulse {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: marker-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+@keyframes marker-pulse {
+  0%, 100% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  50% {
+    width: 15px;
+    height: 15px;
+    opacity: 0.6;
+  }
+}
+
+.city-marker:hover .marker-inner {
+  transform: scale(1.3);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.8), inset 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* City Tooltip */
+.city-tooltip {
+  background: rgba(26, 26, 62, 0.95) !important;
+  border: 1px solid #00ff88 !important;
+  color: #00ff88 !important;
+  border-radius: 5px;
+  padding: 5px 10px !important;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+  letter-spacing: 1px;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: #00ff88 !important;
+}
+
+/* Map Controls */
+.map-controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(10, 14, 39, 0.95);
+  padding: 20px 30px;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.map-title {
+  margin: 0 0 10px 0;
+  color: #00ff88;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.map-subtitle {
+  margin: 0;
+  color: rgba(0, 255, 136, 0.7);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Leaflet popup customization */
+.leaflet-popup-content-wrapper {
+  background: rgba(26, 26, 62, 0.95) !important;
+  border: 2px solid #00ff88 !important;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.leaflet-popup-content {
+  color: #00ff88 !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(26, 26, 62, 0.95) !important;
+}
+
+/* Leaflet attribution */
+.leaflet-attribution {
+  background: rgba(26, 26, 62, 0.8) !important;
+  color: rgba(0, 255, 136, 0.6) !important;
+}
+
+.leaflet-attribution a {
+  color: #00ff88 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-controls {
+    padding: 15px 20px;
+  }
+
+  .map-title {
+    font-size: 1.3rem;
+  }
+
+  .map-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .marker-inner {
+    width: 35px;
+    height: 35px;
+  }
+
+  .marker-pulse {
+    width: 8px;
+    height: 8px;
+  }
+}
