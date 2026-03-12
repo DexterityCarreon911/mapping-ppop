@@ -309,5 +309,125 @@ export const cities: City[] = [
     food: 'Kansas City BBQ style (thick, sweet sauce, burnt ends specialty), jazz-themed restaurants, diverse ethnic cuisines, steakhouses, Country Club Plaza fine dining, fried chicken, fish and chips, craft beer, and food truck culture.',
     festivals: 'Kansas City Jazz Festival, Blues Festival, American Royal Barbecue Competition (massive BBQ event), Salsa Festival, Kansas City Film Festival, River Market concerts, and continuous jazz venue performances',
     tech: 'Tech companies and startups, software development, IT consulting, telecommunications, healthcare technology, logistics, and venture capital investment in growing tech ecosystem'
+  },
+  {
+    id: 'san-antonio',
+    name: 'San Antonio',
+    lat: 29.4241,
+    lng: -98.4936,
+    culture: 'Historic Texas city with Spanish colonial heritage, Alamo iconic landmark, River Walk entertainment district, military presence (Fort Sam Houston), vibrant San Antonio Missions, and thriving multicultural community.',
+    food: 'Tex-Mex and Mexican cuisine (authentic and fusion), puffy tacos (San Antonio specialty), enchiladas and mole, barbacoa, fresh tortillas, River Walk fine dining, diverse street food, and Latin American cuisines.',
+    festivals: 'Fiesta San Antonio (massive 10-day festival), Mission Trail events, San Antonio Stock Show & Rodeo, Maize Fest, Night in Old San Antonio (NIOSA), and River Walk concerts and performances',
+    tech: 'Military and aerospace technology contracts, cybersecurity companies, software development, healthcare IT, bioscience research, and tech startup growth'
+  },
+  {
+    id: 'orlando',
+    name: 'Orlando',
+    lat: 28.5421,
+    lng: -81.3723,
+    culture: 'Theme park capital of the world (Disney, Universal, SeaWorld), entertainment and vacation destination culture, family-friendly attractions, performing arts, sports teams (Magic basketball), and growing tech and convention center presence.',
+    food: 'Disney and theme park dining experiences, International Drive restaurants, Cuban cuisine and Latin American food, Southern comfort food, seafood, buffet culture, food trucks, craft beer, and diverse international cuisines.',
+    festivals: 'Taste of Orlando food festival, Orlando Film Festival, Orlando Fringe theater festival, Halloween celebrations at theme parks, Sports & Spirits Festival, and continuous entertainment venue performances',
+    tech: 'Theme park technology and entertainment systems, hospitality and tourism tech, simulation and gaming software, aerospace contractor presence, medical technology, and growing startup ecosystem'
+  },
+  {
+    id: 'honolulu',
+    name: 'Honolulu',
+    lat: 21.3099,
+    lng: -157.8581,
+    culture: 'Hawaiian capital with unique island culture, Native Hawaiian heritage and traditions, laid-back beach lifestyle, hula and cultural performances, Pearl Harbor historic site, and multicultural Asian and Pacific Islander influences.',
+    food: 'Hawaiian regional cuisine, SPAM musubi (Hawaiian favorite), poke bowls (raw fish), kalua pork and traditional lu\'au food, Asian fusion, Japanese ramen and sushi, Vietnamese pho, and tropical fruits.',
+    festivals: 'Aloha Festival celebrating Hawaiian culture, Honolulu Festival, Merge music festival, Lantern Floating Festival, Hawaii Food & Wine Festival, and continuous hula and cultural performances',
+    tech: 'Tourism and hospitality tech, renewable energy research, ocean and marine technology, military and defense tech (Pearl Harbor), Hawaii tech startup ecosystem, and sustainable innovation'
+  },
+  {
+    id: 'anchorage',
+    name: 'Anchorage',
+    lat: 61.2181,
+    lng: -149.9003,
+    culture: 'Alaska\'s largest city with pristine nature access, outdoor adventure culture (hiking, fishing, skiing), Native Alaskan heritage and art, northern lights viewing, rugged frontier lifestyle, and independent community spirit.',
+    food: 'Fresh Alaska salmon and wild seafood, halibut and crab, moose and game meat, reindeer sausage, Native Alaskan cuisine (seal, whale), sourdough bread, craft beer, and international restaurants bringing world cuisine to remote location.',
+    festivals: 'Fur Rendezvous (winter festival), Iditarod sled dog race starts here, Alaska Native Heritage Month celebrations, Jazz Fest, Equinox Festival, and northern lights viewing season',
+    tech: 'Oil and gas industry tech, renewable energy including hydroelectric and geothermal, telecommunications infrastructure, mining technology, research institutions, and adventure tech companies'
+  },
+  {
+    id: 'sacramento',
+    name: 'Sacramento',
+    lat: 38.5816,
+    lng: -121.4944,
+    culture: 'California capital with Gold Rush heritage, historic Old Town district, agricultural and farmland surroundings, diverse immigrant communities, river culture on Sacramento River, and government center presence.',
+    food: 'Farm-to-table with Central Valley agricultural produce, diverse immigrant cuisines (Chinese, Vietnamese, Mexican, Indian), Hmong food community, wine country nearby (Napa/Sonoma), craft beer, and farmers markets.',
+    festivals: 'California State Fair (major agricultural and cultural event), Taste of Sacramento, Jazz Festival in the Park, Sacramento Beer Week, various neighborhood cultural festivals, and river events',
+    tech: 'Government tech contracts, agricultural technology and agritech, clean energy and solar tech, water management technology, software companies, and growing startup presence'
+  },
+  {
+    id: 'albuquerque',
+    name: 'Albuquerque',
+    lat: 35.0844,
+    lng: -106.6504,
+    culture: 'New Mexico\'s largest city with Native American and Hispanic heritage, Pueblo Revival architecture, Old Town historic district with galleries, art scene, turquoise and jewelry culture, and vibrant multicultural traditions.',
+    food: 'New Mexican cuisine (red and green chile everything), sopapillas (fried pastry), empanadas and enchiladas, Native American frybread and pueblo feast food, Spanish colonial cuisine, tequila culture, and outdoor grilling.',
+    festivals: 'Albuquerque International Balloon Fiesta (massive hot air balloon event), Spanish Market (arts and crafts), Indian Market, Taste of Albuquerque, New Mexico Jazz Festival, and various pueblo ceremonial celebrations',
+    tech: 'Sandia National Laboratories (major research facility), aerospace and defense technology, renewable energy research, nuclear energy tech, telecommunications, and arts and media technology'
+  },
+  {
+    id: 'tucson',
+    name: 'Tucson',
+    lat: 32.2226,
+    lng: -110.9747,
+    culture: 'Arizona\'s second city with Mexican heritage and border culture, University of Arizona presence (student culture), desert landscape and hiking culture, vibrant arts and music scene, Native American communities nearby.',
+    food: 'Authentic Mexican street food and Sonoran cuisine, carne asada and grilled meats, desert plants (prickly pear cactus), flour tortillas and chile peppers, craft beer, farm-to-table with local ingredients, and diverse international cuisines.',
+    festivals: 'Tucson Gem & Mineral Show (world\'s largest), All Souls Procession (Día de Muertos), Arizona Wine Festival, Tucson International Mariachi Conference, Fourth Avenue street fair, and music venue performances',
+    tech: 'Aerospace and defense contractors, University of Arizona research (optical astronomy technology), optical technology and photonics, renewable energy, medical technology, and growing startup ecosystem'
+  },
+  {
+    id: 'milwaukee',
+    name: 'Milwaukee',
+    lat: 43.0389,
+    lng: -87.9065,
+    culture: 'Wisconsin\'s largest city with German heritage and beer brewing traditions, historic working-class neighborhoods, emerging arts and music scene, lakefront culture on Lake Michigan, Third Ward revitalization, and diverse communities.',
+    food: 'Beer culture and craft breweries, bratwurst and sausage traditions, German comfort food, Milwaukee fish fries Friday tradition, Hmong cuisine and farmers markets, diverse immigrant cuisines, and craft beer heritage.',
+    festivals: 'Milwaukee Film Festival, Jazz in the Park, Summerfest (massive multi-week music festival), Wisconsin Cheese Festival, German heritage fest, Bastille Days, and Third Ward art walks and performances',
+    tech: 'Manufacturing and industrial automation, motor and engine technology, healthcare equipment, construction equipment tech, software development, and growing startup community'
+  },
+  {
+    id: 'indianapolis',
+    name: 'Indianapolis',
+    lat: 39.7684,
+    lng: -86.1581,
+    culture: 'Indiana capital with motor racing heritage (Indy 500 iconic), sports culture center, diverse neighborhoods with community pride, pharmaceutical and life sciences presence, and growing tech scene and culinary reputation.',
+    food: 'Racing culture food and tailgating traditions, Indianapolis tenderloin (breaded pork sandwich), soul food heritage, diverse ethnic cuisines, craft breweries, taco trucks, and farm-to-table restaurants.',
+    festivals: 'Indianapolis 500 motor racing event (iconic racing), Indiana Black Expo, Broad Ripple Art Fair, Indianapolis Film Festival, Taste of Indianapolis, and neighborhood street fairs',
+    tech: 'Pharmaceutical and life sciences technology, medical device innovation, motorsports and racing tech, software companies, IT services, healthcare IT, and venture capital investment'
+  },
+  {
+    id: 'el-paso',
+    name: 'El Paso',
+    lat: 31.7587,
+    lng: -106.4869,
+    culture: 'Texas border city with Mexican heritage and cross-border culture, bilingual community, desert landscape with Franklin Mountains, vibrant Hispanic culture, Fort Bliss military heritage, and emerging arts scene.',
+    food: 'Authentic Mexican street food and Sonoran cuisine, chile peppers (local specialty), carne asada and grilled meats, authentic tamales and enchiladas, fresh tortillas, cross-border fusion, and diverse street food.',
+    festivals: 'Viva! El Paso celebration, Border Fest, Festival of Lights at the Plaza, Mariachi Festival, Art museum events, and Mexican independence day celebrations',
+    tech: 'Military and aerospace technology (Fort Bliss), cross-border tech innovation, telecommunications, renewable energy on border, manufacturing technology, and emerging startup ecosystem'
+  },
+  {
+    id: 'long-beach',
+    name: 'Long Beach',
+    lat: 33.7701,
+    lng: -118.1937,
+    culture: 'Southern California port city with diverse multicultural communities (Vietnamese, Latino, Asian), waterfront culture, arts and music scene, LGBTQ+ friendly, naval presence, and urban beach lifestyle with modern attractions.',
+    food: 'Vietnamese pho and Asian fusion capital, authentic Mexican cuisine, Filipino food (large community), Thai and Chinese restaurants, seafood restaurants, food trucks, craft beer, and diverse international cuisines reflecting immigration.',
+    festivals: 'Long Beach Grand Prix (IndyCar racing), Long Beach Jazz Festival, Taste of Oman (Persian/Middle Eastern), Cambodian New Year, Christmas parade on Queen Mary, Film festival, and various multicultural celebrations',
+    tech: 'Port operations and logistics technology, aerospace and defense contractors, maritime and shipping tech, video game studios, digital media companies, and growing tech startup presence'
+  },
+  {
+    id: 'oakland',
+    name: 'Oakland',
+    lat: 37.8044,
+    lng: -122.2712,
+    culture: 'San Francisco Bay Area city with diverse multicultural communities, hip-hop and music culture, African American cultural heritage, arts and community activism, waterfront revival, thriving food and restaurant scene.',
+    food: 'Soul food heritage, Filipino cuisine (large community), Vietnamese and Asian fusion, Mexican street food, African cuisine, West Indian food, craft beer culture, food truck and restaurant innovation scene.',
+    festivals: 'Oakland Jazz Festival, Taste of Oakland, Bay Area Book Festival, Reggae in the Park, Filipino-American heritage festivals, neighborhood street fairs, and live music venues',
+    tech: 'Tech startups and venture capital (close to Silicon Valley), software companies, sustainable tech, social impact tech, gaming companies, and growing Uptown tech district'
   }
 ];

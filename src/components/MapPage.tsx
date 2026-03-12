@@ -11,6 +11,17 @@ export const MapPage = () => {
   const map = useRef<L.Map | null>(null);
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
 
+  const resetMapView = () => {
+    map.current?.flyTo([39.8283, -98.5795], 4, {
+      duration: 1.5,
+    });
+  };
+
+  const handleCityClose = () => {
+    setSelectedCity(null);
+    resetMapView();
+  };
+
   useEffect(() => {
     if (!mapContainer.current) return;
 
@@ -42,6 +53,10 @@ export const MapPage = () => {
         .addTo(map.current!)
         .on('click', () => {
           setSelectedCity(city);
+          // Zoom in on the clicked city
+          map.current?.flyTo([city.lat, city.lng], 10, {
+            duration: 1.5,
+          });
         });
 
       // Add tooltip on hover
@@ -68,7 +83,7 @@ export const MapPage = () => {
         <p className="map-subtitle">Click on cities to explore their culture and technology</p>
       </div>
 
-      <CityPopup city={selectedCity} onClose={() => setSelectedCity(null)} />
+      <CityPopup city={selectedCity} onClose={handleCityClose} />
     </div>
   );
 };
