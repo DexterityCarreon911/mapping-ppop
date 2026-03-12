@@ -8,7 +8,6 @@ interface JudgesMessageProps {
 
 export const JudgesMessage = ({ onComplete }: JudgesMessageProps) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [isSpeaking, setIsSpeaking] = useState(true);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const charIndexRef = useRef(0);
   const fullText = 'Welcome, Honored Judges. From sea to shining sea, witness the digital innovation that powers the American Dream. Across mountains, deserts, and coastlines, these cities represent the spirit of progress, diversity, and possibility that defines our nation. Let the journey begin...';
@@ -28,7 +27,6 @@ export const JudgesMessage = ({ onComplete }: JudgesMessageProps) => {
     
     utterance.onstart = () => {
       charIndexRef.current = 0;
-      setIsSpeaking(true);
       
       // Calculate approximate chars per millisecond based on speech rate
       const estimatedDuration = (fullText.length / (utterance.rate * 150)) * 1000; // rough estimate
@@ -43,7 +41,6 @@ export const JudgesMessage = ({ onComplete }: JudgesMessageProps) => {
     };
     
     utterance.onend = () => {
-      setIsSpeaking(false);
       clearInterval(typewriterInterval);
       setDisplayedText(fullText);
       
@@ -56,7 +53,6 @@ export const JudgesMessage = ({ onComplete }: JudgesMessageProps) => {
     utterance.onerror = (event) => {
       console.error('Speech synthesis error:', event);
       clearInterval(typewriterInterval);
-      setIsSpeaking(false);
     };
     
     utteranceRef.current = utterance;
