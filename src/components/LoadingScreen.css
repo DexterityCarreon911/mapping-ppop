@@ -152,7 +152,7 @@
 }
 
 .portal-warp-1 {
-  animation: warpPulse 3s ease-out infinite;
+  animation: warpExplosion 3.5s ease-out infinite;
   width: 150px;
   height: 150px;
   border: 3px solid rgba(255, 0, 255, 0.8);
@@ -160,7 +160,7 @@
 }
 
 .portal-warp-2 {
-  animation: warpPulse 3s ease-out 0.5s infinite;
+  animation: warpExplosion 3.5s ease-out 0.5s infinite;
   width: 120px;
   height: 120px;
   border: 2px solid rgba(0, 255, 229, 0.7);
@@ -168,21 +168,21 @@
 }
 
 .portal-warp-3 {
-  animation: warpPulse 3s ease-out 1s infinite;
+  animation: warpExplosion 3.5s ease-out 1s infinite;
   width: 90px;
   height: 90px;
   border: 2px solid rgba(102, 255, 255, 0.6);
   box-shadow: 0 0 25px #66FFFF, 0 0 50px rgba(102, 255, 255, 0.4);
 }
 
-@keyframes warpPulse {
+@keyframes warpExplosion {
   0% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.8);
+    transform: translate(-50%, -50%) scale(12);
   }
 }
 
